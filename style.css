@@ -24,18 +24,22 @@ body {
 }
 
 .button1 {
+    z-index: 100;
     background-image: url('assets/scroll.png');
 }
 
 .button2 {
+    z-index: 100;
     background-image: url('assets/ecrire.png');
 }
 
 .button3 {
+    z-index: 100;
     background-image: url('assets/selfie.png');
 }
 
 .button4 {
+    z-index: 100;
     background-image: url('assets/appel.png');
 }
 
