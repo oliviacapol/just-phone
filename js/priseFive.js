@@ -2,10 +2,30 @@ function priseFive(canvas, ctx, source) {
   const video = document.createElement("video");
   video.src = source;
 
+  video.onerror = function () {
+    console.error("Error loading video source:", source);
+  };
+
   video.setAttribute("playsinline", "");
   video.setAttribute("muted", "");
-  video.setAttribute("autoplay", "");
   video.muted = true;
+
+  const attemptPlay = async () => {
+    try {
+      await video.play();
+    } catch (err) {
+      console.log("Autoplay prevented - waiting for user interaction");
+      const playButton = document.createElement("button");
+      playButton.textContent = "Play Video";
+      playButton.style.position = "absolute";
+      playButton.style.zIndex = "2";
+      playButton.onclick = () => {
+        video.play();
+        playButton.remove();
+      };
+      canvas.parentElement.appendChild(playButton);
+    }
+  };
 
   video.style.display = "block";
   video.style.width = "100%";
@@ -17,7 +37,7 @@ function priseFive(canvas, ctx, source) {
   video.style.objectFit = "cover";
 
   video.addEventListener("loadedmetadata", () => {
-    video.play().catch((err) => console.error("Video playback failed:", err));
+    attemptPlay();
   });
 
   canvas.parentElement.appendChild(video);
