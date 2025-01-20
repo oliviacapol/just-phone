@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Selfie</title>
+  </head>
+  <body>
+    <canvas id="selfieCanvas"></canvas>
+    <script src="../js/priseFive.js"></script>
+    <script>
+      const canvas = document.getElementById("selfieCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth - 20;
+      canvas.height = window.innerHeight - 100;
+
+      priseFive(canvas, ctx, "../assets/5.2.mp4");
+    </script>
+    <button
+      class="backbutton"
+      onclick="window.location.href = '../index.html';"
+    ></button>
+  </body>
+</html>

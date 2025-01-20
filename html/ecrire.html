@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Ecrire</title>
+  </head>
+  <body>
+    <canvas id="circleCanvas"></canvas>
+    <button
+      class="backbutton"
+      onclick="window.location.href = '../index.html';"
+    ></button>
+    <script type="module" src="../js/drawCircle.js"></script>
+    <script type="module">
+      import { drawCircle } from "../js/drawCircle.js";
+
+      const canvas = document.getElementById("circleCanvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const circleAnimation = drawCircle(canvas, ctx, true);
+    </script>
+  </body>
+</html>
