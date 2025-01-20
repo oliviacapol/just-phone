@@ -1,8 +1,11 @@
 function priseFive(canvas, ctx, source) {
   const video = document.createElement("video");
   video.src = source;
+
   video.setAttribute("playsinline", "");
+  video.setAttribute("muted", "");
   video.setAttribute("autoplay", "");
+  video.muted = true;
 
   video.style.display = "block";
   video.style.width = "100%";
