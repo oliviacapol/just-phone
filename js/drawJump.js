@@ -17,7 +17,11 @@ function drawJump(canvas, ctx) {
 
   let isEnabled = true;
 
-  console.log("drawJump");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
 
   for (let i = 0; i < frameCount; i++) {
     const img = new Image();

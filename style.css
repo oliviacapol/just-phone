@@ -16,8 +16,9 @@ body {
     width: 100%;
     margin: 5px 0; 
     border: none;
-    background-size: cover;
-    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
     cursor: pointer;
     background-color: #ffffff00;
     z-index: 100; 
@@ -54,8 +55,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     background-image: url("../assets/retour.png");
-    background-size: cover;
-    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
     background-color: #ffffff00;
     z-index: 100;
-  }
+}
